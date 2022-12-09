@@ -1,0 +1,17 @@
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        we=0
+        #avg=-99999
+        wsum=0
+        for we in range(k):
+
+            wsum+=nums[we]
+        M=wsum
+        for we in range(k,len(nums)):
+
+
+            wsum+=nums[we]
+            wsum-=nums[we-k]
+            M=max(M,wsum)
+            
+        return M/k
